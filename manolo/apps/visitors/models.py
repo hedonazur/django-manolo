@@ -102,3 +102,8 @@ class Subscriber(models.Model):
     avatar = models.TextField(
         blank=True,
     )
+    alerts = models.ManyToManyField('Alert')
+
+
+class Alert(models.Model):
+    full_name = models.TextField(db_index=True, unique=True)
